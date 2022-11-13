@@ -24,6 +24,19 @@ formulario.onsubmit = (e) => {
     action_To_DO.value = '';
     //Agrgamos el valor de la COSNTANTE que guarda el valor del del INPUT
     toDoPendientes.push(action_To_DO_Text);
+
+    //Crear una referencia al To Do List, para poder usarla e imprimir los valores del arreglo en la lista desordenada
+    //Debe ser fuera del FOR para que no la busque por la cantidad de veces que tengamos en el arreglo
+    const To_Do_List = document.getElementById("To-Do-List");
+    //Para evitar que los valores se repitan dentro del arreglo de "toDoPendientes", se elimina el contenido HTML que se cuenta 
+    To_Do_List.innerHTML = "";
+    //Para agreagar los valores del arreglo y  de manera automática los valores podemos agregar al usar un ciclo FOR
+    //Para recorrer el arreglo y mostrar en la lista desordenada las TAREAS PENDIENTES POR HACER
+    for (let i = 0; i < toDoPendientes.length; i++){
+        //Lo que contenga mi variable se le va concatenar nuevo contenido
+        To_Do_List.innerHTML += "<li>" + toDoPendientes[i] + "</li>";
+    }
+    
 }
 
 
