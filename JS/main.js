@@ -38,5 +38,3 @@ formulario.onsubmit = (e) => {
     }
     
 }
-
-
